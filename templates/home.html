@@ -24,7 +24,7 @@
     <div class="posts-grid" id="posts-grid">
       {{#each posts}}
       <article class="post-card" data-slug="{{slug}}" data-date="{{date_str}}">
-        <a href="/{{slug}}/" class="post-card-link">
+        <a href="{{base_url}}/{{slug}}/" class="post-card-link">
           <div class="post-card-meta">
             <time>{{date_str}}</time>
             <div class="post-card-tags">{{tags_html}}</div>

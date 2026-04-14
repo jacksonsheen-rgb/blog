@@ -7,16 +7,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="{{base_url}}/static/css/style.css">
 </head>
 <body class="{{body_class}}">
 
   <header class="site-header">
     <div class="header-inner">
-      <a href="/" class="site-logo">I came up here to freeze</a>
+      <a href="{{base_url}}/" class="site-logo">I came up here to freeze</a>
       <nav class="site-nav">
-        <a href="/">Journal</a>
-        <a href="/#archive">Archive</a>
+        <a href="{{base_url}}/">Journal</a>
+        <a href="{{base_url}}/#archive">Archive</a>
       </nav>
     </div>
   </header>
@@ -37,6 +37,6 @@
     </div>
   </footer>
 
-  <script src="/static/js/main.js"></script>
+  <script src="{{base_url}}/static/js/main.js"></script>
 </body>
 </html>

@@ -21,6 +21,10 @@ TEMPLATES_DIR = BASE_DIR / "templates"
 STATIC_DIR = BASE_DIR / "static"
 OUTPUT_DIR = BASE_DIR / "dist"
 
+# Base URL for GitHub Pages (e.g. "/blog" if hosted at username.github.io/blog)
+# Set to "" for root hosting or local preview
+BASE_URL = "/blog"
+
 # ---------------------------------------------------------------------------
 # Minimal Markdown → HTML converter (no dependencies)
 # ---------------------------------------------------------------------------
@@ -271,11 +275,13 @@ def build():
             "tags_html": tags_html,
             "body": p["body_html"],
             "slug": p["slug"],
+            "base_url": BASE_URL,
         })
         page = render_template(base_html, {
             "title": p["title"] + " — I came up here to freeze",
             "content": post_content,
             "body_class": "post-page",
+            "base_url": BASE_URL,
         })
         post_dir = OUTPUT_DIR / p["slug"]
         post_dir.mkdir(parents=True, exist_ok=True)
@@ -292,15 +298,18 @@ def build():
             "image": p["image"],
             "slug": p["slug"],
             "tags_html": tags_html,
+            "base_url": BASE_URL,
         })
 
     home_content = render_template(home_html, {
         "posts": post_cards,
+        "base_url": BASE_URL,
     })
     page = render_template(base_html, {
         "title": "I came up here to freeze",
         "content": home_content,
         "body_class": "home-page",
+        "base_url": BASE_URL,
     })
     (OUTPUT_DIR / "index.html").write_text(page, encoding="utf-8")
 
