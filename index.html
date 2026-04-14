@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I came up here to freeze</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="home-page">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">I came up here to freeze</a>
+      <nav class="site-nav">
+        <a href="/">Journal</a>
+        <a href="/#archive">Archive</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-title">I came up here to freeze</h1>
+    <p class="hero-subtitle">A journal of thoughts, observations, and works in progress.</p>
+  </div>
+</section>
+
+<section class="latest-post" id="latest">
+  <div class="section-inner">
+    <div class="section-label">Latest</div>
+  </div>
+</section>
+
+<section class="archive" id="archive">
+  <div class="section-inner">
+    <div class="archive-header">
+      <div class="section-label">Archive</div>
+      <div class="sort-controls">
+        <button class="sort-btn active" data-sort="recent">Recent</button>
+        <span class="sort-divider">/</span>
+        <button class="sort-btn" data-sort="popular">Popular</button>
+      </div>
+    </div>
+    <div class="posts-grid" id="posts-grid">
+      
+      <article class="post-card" data-slug="welcome" data-date="April 13, 2026">
+        <a href="/welcome/" class="post-card-link">
+          <div class="post-card-meta">
+            <time>April 13, 2026</time>
+            <div class="post-card-tags"><span class="tag">thoughts</span><span class="tag">beginnings</span></div>
+          </div>
+          <h2 class="post-card-title">Welcome to The Green Room</h2>
+          <p class="post-card-desc">A first post — what this space is about, and what's to come.</p>
+        </a>
+      </article>
+      
+      <article class="post-card" data-slug="on-color" data-date="April 10, 2026">
+        <a href="/on-color/" class="post-card-link">
+          <div class="post-card-meta">
+            <time>April 10, 2026</time>
+            <div class="post-card-tags"><span class="tag">design</span><span class="tag">observation</span></div>
+          </div>
+          <h2 class="post-card-title">On Color and Mood</h2>
+          <p class="post-card-desc">Why greens and browns feel like home — and what color teaches us about memory.</p>
+        </a>
+      </article>
+      
+      <article class="post-card" data-slug="links-april" data-date="April 07, 2026">
+        <a href="/links-april/" class="post-card-link">
+          <div class="post-card-meta">
+            <time>April 07, 2026</time>
+            <div class="post-card-tags"><span class="tag">links</span><span class="tag">culture</span></div>
+          </div>
+          <h2 class="post-card-title">Links I've Been Sitting With</h2>
+          <p class="post-card-desc">A handful of things from the internet that stuck around longer than a tab.</p>
+        </a>
+      </article>
+      
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-logo">I came up here to freeze</span>
+        <p class="footer-tagline">Words, images, and everything in between.</p>
+      </div>
+      <div class="footer-right">
+        <p>&copy; 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
