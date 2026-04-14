@@ -4,6 +4,11 @@
 // ---------------------------------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", async () => {
+  // Detect base URL from the script's own path
+  const scriptSrc = document.querySelector('script[src*="main.js"]')?.src || "";
+  const baseUrl = scriptSrc.replace(/\/static\/js\/main\.js.*$/, "");
+  const basePath = new URL(baseUrl).pathname.replace(/\/$/, "");
+
   // Only run on homepage
   const latestSection = document.querySelector(".latest-post .section-inner");
   const grid = document.getElementById("posts-grid");
@@ -12,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Load posts data for sorting
   let postsData = [];
   try {
-    const res = await fetch("/static/js/posts.json");
+    const res = await fetch(basePath + "/static/js/posts.json");
     postsData = await res.json();
   } catch (e) {
     console.warn("Could not load posts.json", e);
@@ -28,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const slug = first.dataset.slug || "";
 
     latestSection.innerHTML += `
-      <a href="/${slug}/" class="featured-card">
+      <a href="${basePath}/${slug}/" class="featured-card">
         <div class="featured-card-image"></div>
         <div class="featured-card-content">
           <div class="featured-card-meta">${time}</div>
