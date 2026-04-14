@@ -9,6 +9,7 @@ import os
 import re
 import shutil
 import json
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -22,8 +23,8 @@ STATIC_DIR = BASE_DIR / "static"
 OUTPUT_DIR = BASE_DIR / "dist"
 
 # Base URL for GitHub Pages (e.g. "/blog" if hosted at username.github.io/blog)
-# Set to "" for root hosting or local preview
-BASE_URL = "/blog"
+# Use --local flag for local preview (sets BASE_URL to "")
+BASE_URL = "" if "--local" in sys.argv else "/blog"
 
 # ---------------------------------------------------------------------------
 # Minimal Markdown → HTML converter (no dependencies)
