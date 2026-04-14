@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Welcome to The Green Room",
+    "date": "2026-04-13T00:00:00",
+    "date_str": "April 13, 2026",
+    "description": "A first post \u2014 what this space is about, and what's to come.",
+    "image": "",
+    "slug": "welcome",
+    "tags": [
+      "thoughts",
+      "beginnings"
+    ],
+    "index": 0
+  },
+  {
+    "title": "On Color and Mood",
+    "date": "2026-04-10T00:00:00",
+    "date_str": "April 10, 2026",
+    "description": "Why greens and browns feel like home \u2014 and what color teaches us about memory.",
+    "image": "",
+    "slug": "on-color",
+    "tags": [
+      "design",
+      "observation"
+    ],
+    "index": 1
+  },
+  {
+    "title": "Links I've Been Sitting With",
+    "date": "2026-04-07T00:00:00",
+    "date_str": "April 07, 2026",
+    "description": "A handful of things from the internet that stuck around longer than a tab.",
+    "image": "",
+    "slug": "links-april",
+    "tags": [
+      "links",
+      "culture"
+    ],
+    "index": 2
+  }
+]

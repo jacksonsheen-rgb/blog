@@ -1,0 +1,650 @@
+/* ==========================================================================
+   The Green Room — Base Styles
+   Color palette: greens & browns inspired by Frank Ocean
+   Layout: editorial magazine feel inspired by Works in Progress
+   ========================================================================== */
+
+:root {
+  /* --- Greens --- */
+  --green-deep:    #2c4a2e;
+  --green-mid:     #4a7c59;
+  --green-soft:    #7ba88a;
+  --green-pale:    #c8dcc0;
+  --green-wash:    #e8f0e4;
+
+  /* --- Browns --- */
+  --brown-deep:    #3e2c1c;
+  --brown-mid:     #6b4c3b;
+  --brown-warm:    #a67c5b;
+  --brown-light:   #d4b896;
+  --brown-wash:    #f2ebe3;
+
+  /* --- Neutrals --- */
+  --cream:         #faf8f4;
+  --cream-dark:    #f0ece4;
+  --ink:           #2a2a28;
+  --ink-light:     #5a5a56;
+  --ink-faint:     #9a9a94;
+  --white:         #ffffff;
+
+  /* --- Typography --- */
+  --font-serif:    'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --font-mono:     'IBM Plex Mono', 'SF Mono', 'Consolas', monospace;
+  --font-sans:     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* --- Spacing --- */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  2rem;
+  --space-xl:  3rem;
+  --space-2xl: 5rem;
+  --space-3xl: 8rem;
+
+  /* --- Layout --- */
+  --max-width:     1200px;
+  --content-width: 720px;
+}
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--cream);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--green-deep);
+  border-bottom: 1px solid var(--green-mid);
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--green-pale);
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+
+.site-logo:hover {
+  color: var(--white);
+}
+
+.site-nav {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.site-nav a {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--green-soft);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover {
+  color: var(--white);
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  background-color: var(--green-deep);
+  color: var(--green-pale);
+  padding: var(--space-3xl) var(--space-lg) var(--space-2xl);
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--green-soft);
+  letter-spacing: 0.04em;
+}
+
+/* ==========================================================================
+   Sections — shared
+   ========================================================================== */
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--brown-mid);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--brown-light);
+  margin-bottom: var(--space-xl);
+}
+
+/* ==========================================================================
+   Latest post (featured)
+   ========================================================================== */
+
+.latest-post {
+  background-color: var(--cream);
+}
+
+.featured-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  border: 1px solid var(--brown-light);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.featured-card:hover {
+  border-color: var(--green-mid);
+}
+
+.featured-card-image {
+  aspect-ratio: 4/3;
+  background-color: var(--green-wash);
+  background-size: cover;
+  background-position: center;
+}
+
+.featured-card-content {
+  padding: var(--space-xl) var(--space-xl) var(--space-xl) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-card-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.featured-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--green-deep);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
+}
+
+.featured-card-desc {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Archive / Posts Grid
+   ========================================================================== */
+
+.archive {
+  background-color: var(--cream-dark);
+}
+
+.archive-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-xl);
+}
+
+.archive-header .section-label {
+  margin-bottom: 0;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.sort-divider {
+  color: var(--ink-faint);
+}
+
+.sort-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  cursor: pointer;
+  padding: var(--space-xs) var(--space-sm);
+  transition: color 0.2s;
+}
+
+.sort-btn:hover {
+  color: var(--green-deep);
+}
+
+.sort-btn.active {
+  color: var(--green-deep);
+  border-bottom: 2px solid var(--green-mid);
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* ==========================================================================
+   Post Card
+   ========================================================================== */
+
+.post-card {
+  border: 1px solid var(--brown-light);
+  border-radius: 2px;
+  background-color: var(--cream);
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.post-card:hover {
+  border-color: var(--green-mid);
+  transform: translateY(-2px);
+}
+
+.post-card-link {
+  display: block;
+  padding: var(--space-lg);
+}
+
+.post-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.post-card-meta time {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.post-card-tags {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  background-color: var(--green-wash);
+  padding: 2px 8px;
+  border-radius: 1px;
+}
+
+.post-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--green-deep);
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.01em;
+}
+
+.post-card-desc {
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Individual Post Page
+   ========================================================================== */
+
+.post-header {
+  background-color: var(--green-deep);
+  color: var(--green-pale);
+  padding: var(--space-3xl) var(--space-lg) var(--space-2xl);
+}
+
+.post-header-inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.post-meta time {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--green-soft);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.post-tags .tag {
+  background-color: rgba(255,255,255,0.1);
+  color: var(--green-pale);
+}
+
+.post-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--cream);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+.post-description {
+  font-size: 1.1rem;
+  color: var(--green-soft);
+  line-height: 1.6;
+  font-family: var(--font-sans);
+}
+
+/* --- Post Body --- */
+
+.post-body {
+  background-color: var(--cream);
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.post-body-inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+.post-body-inner h2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--green-deep);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
+}
+
+.post-body-inner h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--brown-deep);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.post-body-inner p {
+  margin-bottom: var(--space-lg);
+}
+
+.post-body-inner a {
+  color: var(--green-mid);
+  text-decoration: underline;
+  text-decoration-color: var(--green-pale);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+
+.post-body-inner a:hover {
+  text-decoration-color: var(--green-mid);
+}
+
+.post-body-inner blockquote {
+  border-left: 3px solid var(--brown-warm);
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-xl) 0;
+  background-color: var(--brown-wash);
+  border-radius: 0 2px 2px 0;
+}
+
+.post-body-inner blockquote p {
+  color: var(--brown-deep);
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.post-body-inner pre {
+  background-color: var(--green-deep);
+  color: var(--green-pale);
+  padding: var(--space-lg);
+  border-radius: 2px;
+  overflow-x: auto;
+  margin: var(--space-xl) 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.post-body-inner code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+}
+
+.post-body-inner p code {
+  background-color: var(--green-wash);
+  padding: 2px 6px;
+  border-radius: 2px;
+  color: var(--green-deep);
+}
+
+.post-body-inner ul, .post-body-inner ol {
+  margin-bottom: var(--space-lg);
+  padding-left: var(--space-lg);
+}
+
+.post-body-inner li {
+  margin-bottom: var(--space-sm);
+}
+
+.post-body-inner img {
+  border-radius: 2px;
+  margin: var(--space-xl) 0;
+  border: 1px solid var(--brown-light);
+}
+
+.post-body-inner hr {
+  border: none;
+  border-top: 1px solid var(--brown-light);
+  margin: var(--space-2xl) 0;
+}
+
+/* --- Post Footer --- */
+
+.post-footer {
+  background-color: var(--cream-dark);
+  border-top: 1px solid var(--brown-light);
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.post-footer-inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.back-link {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--green-mid);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--green-deep);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--brown-deep);
+  color: var(--brown-light);
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--brown-light);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.footer-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--brown-warm);
+  letter-spacing: 0.04em;
+}
+
+.footer-right p {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--brown-warm);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .header-inner {
+    padding: var(--space-md);
+  }
+
+  .section-inner {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-card-content {
+    padding: var(--space-lg);
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .post-header {
+    padding: var(--space-2xl) var(--space-md) var(--space-xl);
+  }
+
+  .post-body {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
+  }
+
+  .archive-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+}
